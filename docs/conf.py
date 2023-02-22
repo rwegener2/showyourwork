@@ -1,3 +1,11 @@
+# -- Add in cwd to absolute path --------------------------------------------
+# This is necessary because sphinx does not know about the $PYTHONPATH
+# unless the dev has explicitly created in in their local environment. 
+# We'll add it in just to be safe for general doc builds
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 import hacks
 
 # -- Project information -----------------------------------------------------
